@@ -1,0 +1,29 @@
+Database Creation
+1. Right click Elephant
+2. Click create
+3. Click Query Editor
+    this is where the code will be typed
+    the code will rann in sections and no code is save so copy elsewhere
+
+Table Check
+1. Click on the dropdown of the Coints
+2.Click the dropdown of Schemas
+3. Look at Tables
+    if table not showing then right click tables and refresh
+
+Import
+1. Do everything in Table Check first
+2.Click the dropdown of Tables
+3. Right click the table need imp/exp
+4. Click the obvious
+    Binary Path error
+    1. Go to file top left
+    2. Click prefernces
+    3.Click Paths
+    4. Go to the program we on and click ...
+    5. Go to C:/
+    6. Go to Program files, PostgresSQL, Bin, done  + save
+5.Go to the file for importing
+6. Ensure format is correct, delimiter = comma (if csv), header is yes
+7. Click ok
+

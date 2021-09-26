@@ -38,16 +38,16 @@ CREATE TABLE salaries (
   FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
   PRIMARY KEY (emp_no)
 );
-
-CREATE TABLE titles (
-  emp_no INT NOT NULL,
-  title VARCHAR NOT NULL,
-  from_date DATE NOT NULL,
-  to_date DATE NOT NULL,
-  FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-  PRIMARY KEY (emp_no)
 );
 
+CREATE TABLE titles (
+    emp_no INT NOT NULL,
+    title VARCHAR(20) NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE NOT NULL,
+FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    PRIMARY KEY (emp_no, title, from_date)
+);
 CREATE TABLE dept_emp (
 	emp_no INT NOT NULL,
     dept_no varchar NOT NULL,
@@ -58,6 +58,37 @@ FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
     PRIMARY KEY (emp_no, dept_no)
 );
 
-
 --Confirming tables were created, performing a query.
 SELECT * FROM departments;
+
+--Above is a created database
+--Below of deletion if needed
+DROP TABLE employees CASCADE;
+
+
+--Clauses and Operators
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1955-12-31';
+
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1952-12-31';
+
+-- Retirement eligibility
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1955-12-31';
+
+-- Retirement eligibility///adjustments to the code
+SELECT first_name, last_name
+FROM employees
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+
+--tuples in sql are in (). In our code this tuple is grouping the conditions
+
+--After creating the tables we can no analyze the future for the comapny. Finding out How many people
+--will be retiring? And from those employees who is eligible for a retirement package?
+
+
+

@@ -87,8 +87,7 @@ WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 
 --tuples in sql are in (). In our code this tuple is grouping the conditions
 
---After creating the tables we can no analyze the future for the comapny. Finding out How many people
---will be retiring? And from those employees who is eligible for a retirement package?
+
 
 
 
